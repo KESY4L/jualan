@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panel Shop by EL</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto Mono', monospace;
+  background: radial-gradient(circle at center, #0d0d0d, #000);
+  color: #eee;
+  overflow-x: hidden;
+}
+
+header {
+  text-align: center;
+  margin-top: 20px;
+}
+
+header img {
+  width: 150px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #00ffff66;
+}
+
+h1 {
+  margin-top: 10px;
+  font-size: 1.5em;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff66;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.section {
+  background: rgba(26,26,26,0.85);
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #00ffff44;
+}
+
+.title {
+  color: #0ff;
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-shadow: 0 0 5px #0ff;
+}
+
+.item {
+  margin: 5px 0;
+}
+
+a {
+  color: #0ff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.footer {
+  text-align: center;
+  margin: 20px;
+  font-size: 0.9em;
+  color: #888;
+}
+
+#stars {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 0;
+  top: 0;
+  left: 0;
+}
+
+</style>
+</head>
+<body>
+<canvas id="stars"></canvas>
+
+<header>
+  <img src="https://i.pinimg.com/originals/80/9d/15/809d15c5f95dc147a2e8233a1b306fa9.jpg" alt="Elaina">
+  <h1>ⓘ Hi, I am Panel Shop for your WhatsApp Bot ⚠︎</h1>
+</header>
+
+<div class="container">
+
+  <div class="section">
+    <div class="title">🌐 List Panel By EL 🌐</div>
+    <div class="item">💠 1gb = 500p</div>
+    <div class="item">💠 2gb = 1k</div>
+    <div class="item">💠 3gb = 2k</div>
+    <div class="item">💠 4gb = 3k</div>
+    <div class="item">💠 5gb = 4k</div>
+    <div class="item">💠 6gb = 5k</div>
+    <div class="item">💠 7gb = 6k</div>
+    <div class="item">💠 8gb = 7k</div>
+    <div class="item">💠 9gb = 8k</div>
+    <div class="item">💠 10gb = 9k</div>
+    <div class="item">🌀 Unlimited = 10k</div>
+    <div class="item" style="color: #ff0;">🤯 Unlimited diskon <s>10k</s> ➜ <strong>8k</strong></div>
+  </div>
+
+  <div class="section">
+    <div class="title">💻 VPS</div>
+    <div class="item">Vps R16C4 30K<br>Udh ada own panel, bisa buat</div>
+  </div>
+
+  <div class="section">
+    <div class="title">🥵 Reseller 5k</div>
+    <div class="item">* Jual panel<br>* Cpanel bebas<br>* Profit<br>* Balmod</div>
+  </div>
+
+  <div class="section">
+    <div class="title">👾 Admin Panel 15k</div>
+    <div class="item">* Cpanel unli, bebas<br>* No delay<br>* Profit<br>* Kang panel<br>* Bisa cpanel sepuasnya</div>
+  </div>
+
+  <div class="section">
+    <div class="title">🥶 Tangan Kanan 25k</div>
+    <div class="item">* Buat panel bebas<br>* No delay<br>* Cpanel admin<br>* Profit<br>* Balmod pastinya<br>* Kang panel sepuh</div>
+  </div>
+
+  <div class="section">
+    <div class="title">🚀 SUNTIK MEDSOS BY EL 🚀</div>
+    <div class="item">🏧 TikTok: <span style="color:#0f0;">OPEN ✅</span></div>
+    <div class="item">🚾 Instagram: <span style="color:#0f0;">OPEN ✅</span></div>
+    <div class="item">🅿️ YouTube: <span style="color:#f00;">CLOSED ⛔</span></div>
+    <div class="item">🈳 WhatsApp: <span style="color:#0f0;">OPEN ✅</span></div>
+  </div>
+
+  <div class="section" style="text-align:center;">
+    <a href="http://t.me/ch3ll123">💳 Buy?</a>
+  </div>
+
+</div>
+<div class="footer">© ELcihuy</div>
+
+<script>
+// Animasi bintang pelan
+const canvas = document.getElementById('stars');
+const ctx = canvas.getContext('2d');
+let stars = [];
+
+function resize() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resize);
+resize();
+
+for(let i=0; i<100; i++){
+  stars.push({
+    x: Math.random()*canvas.width,
+    y: Math.random()*canvas.height,
+    radius: Math.random()*1.2,
+    alpha: Math.random(),
+    dx: (Math.random()-0.5)*0.05,
+    dy: (Math.random()-0.5)*0.05
+  });
+}
+
+function draw(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.fillStyle='white';
+  stars.forEach(s=>{
+    ctx.globalAlpha = s.alpha;
+    ctx.beginPath();
+    ctx.arc(s.x,s.y,s.radius,0,Math.PI*2);
+    ctx.fill();
+    s.x += s.dx;
+    s.y += s.dy;
+    if(s.x<0) s.x=canvas.width;
+    if(s.x>canvas.width) s.x=0;
+    if(s.y<0) s.y=canvas.height;
+    if(s.y>canvas.height) s.y=0;
+  });
+  requestAnimationFrame(draw);
+}
+draw();
+</script>
+</body>
+</html>
